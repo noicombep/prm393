@@ -7,11 +7,11 @@ class QrScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Giả sử tạo QR cho URL của app hoặc sản phẩm
-    const String qrData = "https://api.shopgau.store";
+    const String qrData = "https://shopgau.store";
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Create QR"),
+        title: const Text("Scan QR to Visit ShopGau"),
         backgroundColor: Colors.pink,
       ),
       body: Center(

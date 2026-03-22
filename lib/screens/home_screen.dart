@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+import '../models/product.dart';
+import '../services/product_service.dart';
+import '../widgets/product_card.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late Future<List<Product>> _productsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _productsFuture = ProductService().getProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +53,7 @@ class HomePage extends StatelessWidget {
                 ),
                 Container(
                   height: 400,
-                  color: Colors.pink.withValues(alpha: 0.4),
+                  color: Colors.pink.withOpacity(0.4),
                 ),
                 Positioned.fill(
                   child: Center(
@@ -90,7 +107,7 @@ class HomePage extends StatelessWidget {
                                 backgroundColor: Colors.pink,
                                 foregroundColor: Colors.white,
                               ),
-                              child: const Text("Create QR"),
+                              child: const Text("Scan QR"),
                             ),
                           ],
                         )
@@ -105,37 +122,37 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Featured Products",
                       style: Theme.of(context).textTheme.headlineMedium),
                   const SizedBox(height: 16),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.75,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                    ),
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        elevation: 4,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              child: Image.network(
-                                "https://api.shopgau.store/images/bear${index + 1}.jpg",
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("Teddy Bear ${index + 1}"),
-                            ),
-                          ],
+                  FutureBuilder<List<Product>>(
+                    future: _productsFuture,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      } else if (snapshot.hasError) {
+                        return Center(child: Text("Error: ${snapshot.error}"));
+                      } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                        return const Center(child: Text("No products available"));
+                      }
+
+                      final products = snapshot.data!;
+
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 0.75,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
                         ),
+                        itemCount: products.length,
+                        itemBuilder: (context, index) {
+                          return ProductCard(product: products[index]);
+                        },
                       );
                     },
                   ),
@@ -176,19 +193,24 @@ class HomePage extends StatelessWidget {
                   Text("Shopping Made Simple",
                       style: Theme.of(context).textTheme.headlineMedium),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      StepItem("🧸", "Choose a Teddy",
-                          "Browse our lovely collection."),
-                      StepItem("🛒", "Add to Cart",
-                          "Pick your favorite bear."),
-                      StepItem("💳", "Secure Checkout",
-                          "Pay easily and safely."),
-                      StepItem("📦", "Fast Delivery",
-                          "Receive at your door."),
-                    ],
-                  )
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: const [
+                        StepItem("🧸", "Choose a Teddy",
+                            "Browse our lovely collection."),
+                        SizedBox(width: 12),
+                        StepItem("🛒", "Add to Cart",
+                            "Pick your favorite bear."),
+                        SizedBox(width: 12),
+                        StepItem("💳", "Secure Checkout",
+                            "Pay easily and safely."),
+                        SizedBox(width: 12),
+                        StepItem("📦", "Fast Delivery",
+                            "Receive at your door."),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -315,21 +337,24 @@ class StepItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(icon, style: const TextStyle(fontSize: 32)),
-        const SizedBox(height: 8),
-        Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        Text(
-          desc,
-          style: const TextStyle(color: Colors.grey),
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return SizedBox(
+      width: 140,
+      child: Column(
+        children: [
+          Text(icon, style: const TextStyle(fontSize: 32)),
+          const SizedBox(height: 8),
+          Text(
+            title,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            desc,
+            style: const TextStyle(color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
