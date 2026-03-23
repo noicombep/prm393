@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'TeddyBear Store 🧸',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.pink, // hợp vibe shop gấu 😆
+            seedColor: Colors.pink, 
           ),
         ),
         initialRoute: AppRoutes.splash,
