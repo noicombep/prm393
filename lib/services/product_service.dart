@@ -3,7 +3,7 @@ import '../models/product.dart';
 
 class ProductService {
   final Dio _dio = Dio(BaseOptions(
-    baseUrl: "https://api.shopgau.store/api", // Giả sử API này
+    baseUrl: "http://10.0.2.2:5059/api", // Giả sử API này
     headers: {"Content-Type": "application/json"},
   ));
 

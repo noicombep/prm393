@@ -3,7 +3,7 @@ import '../services/session_service.dart';
 
 class AuthService {
   final Dio _dio = Dio(BaseOptions(
-    baseUrl: "https://api.shopgau.store/api",
+    baseUrl: "http://10.0.2.2:5059/api",
     headers: {"Content-Type": "application/json"},
   ));
 

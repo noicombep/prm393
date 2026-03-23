@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/order.dart';
 
 class OrderService {
-  final String baseUrl = "https://api.shopgau.store/api/order";
+  final String baseUrl = "http://10.0.2.2:5059/api/order";
 
   Future<Map<String, dynamic>> createOrder({
     required String token,
