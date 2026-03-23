@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/product.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
+
 class ProductCard extends StatefulWidget {
   final Product product;
 
@@ -13,9 +14,6 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   bool addingToCart = false;
-
-  // Fake cart (sau này thay bằng Provider)
-  static Map<int, int> cart = {};
 
   String formatPrice(double price) {
     return "${price.toStringAsFixed(0)} đ";
@@ -31,34 +29,30 @@ class _ProductCardState extends State<ProductCard> {
     );
   }
 
-Future<void> handleAddToCart() async {
-  final product = widget.product;
+  Future<void> handleAddToCart() async {
+    final product = widget.product;
 
-  setState(() => addingToCart = true);
+    setState(() => addingToCart = true);
 
-  await Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 300));
 
-  final cartProvider = context.read<CartProvider>();
+    final cartProvider = context.read<CartProvider>();
 
-  final success = await cartProvider.addToCart(product);
+    final success = cartProvider.addToCart(product);
 
-  if (success) {
-    showMessage("Đã thêm vào giỏ 🛒", true);
-  } else {
-    final currentQty = cartProvider.getQuantity(product.id);
-
-    if (product.stock == 0) {
-      showMessage("Hết hàng ❌", false);
+    if (success) {
+      showMessage("Đã thêm vào giỏ 🛒", true);
     } else {
-      showMessage(
-        "Chỉ còn ${product.stock - currentQty} sản phẩm",
-        false,
-      );
+      final currentQty = cartProvider.getQuantity(product.id);
+      if (product.stock == 0) {
+        showMessage("Hết hàng ❌", false);
+      } else {
+        showMessage("Chỉ còn ${product.stock - currentQty} sản phẩm", false);
+      }
     }
-  }
 
-  setState(() => addingToCart = false);
-}
+    setState(() => addingToCart = false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,10 +77,13 @@ Future<void> handleAddToCart() async {
                     "https://api.shopgau.store${product.imageUrl}",
                     fit: BoxFit.cover,
                     width: double.infinity,
-                    errorBuilder: (context, error, stackTrace) =>
-                        const Center(
-                            child: Icon(Icons.broken_image,
-                                size: 64, color: Colors.grey)),
+                    errorBuilder: (context, error, stackTrace) => const Center(
+                      child: Icon(
+                        Icons.broken_image,
+                        size: 64,
+                        color: Colors.grey,
+                      ),
+                    ),
                   ),
 
                   // Overlay hết hàng
@@ -124,10 +121,7 @@ Future<void> handleAddToCart() async {
                   if (product.category != null)
                     Text(
                       product.category!.name,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 12,
-                      ),
+                      style: const TextStyle(color: Colors.grey, fontSize: 12),
                     ),
 
                   const SizedBox(height: 4),
@@ -156,7 +150,8 @@ Future<void> handleAddToCart() async {
                                 width: 16,
                                 height: 16,
                                 child: CircularProgressIndicator(
-                                    strokeWidth: 2),
+                                  strokeWidth: 2,
+                                ),
                               )
                             : const Icon(Icons.shopping_cart),
                       ),
