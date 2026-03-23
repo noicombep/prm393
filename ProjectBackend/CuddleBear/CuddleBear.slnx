@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/CuddleBearUI/">
+    <File Path="Contact.html" />
+    <File Path="Home.html" />
+    <File Path="login.html" />
+    <File Path="products.html" />
+    <File Path="register.html" />
+  </Folder>
+  <Project Path="CuddleBear/CuddleBear.csproj" />
+</Solution>
