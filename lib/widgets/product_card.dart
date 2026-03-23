@@ -38,7 +38,7 @@ class _ProductCardState extends State<ProductCard> {
 
     final cartProvider = context.read<CartProvider>();
 
-    final success = cartProvider.addToCart(product);
+    final success = await cartProvider.addToCart(product);
 
     if (success) {
       showMessage("Đã thêm vào giỏ 🛒", true);
