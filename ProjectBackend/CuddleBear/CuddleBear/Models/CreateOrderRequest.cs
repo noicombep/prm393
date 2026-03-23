@@ -2,6 +2,8 @@
 {
     public class CreateOrderRequest
     {
+        public string Phone { get; set; } = null!;
+
         public string ShippingAddress { get; set; } = null!;
         public string PaymentMethod { get; set; } = null!;
         public decimal TotalPrice { get; set; }

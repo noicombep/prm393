@@ -35,6 +35,7 @@ public class OrdersController : ControllerBase
             UserId = userId,
             ShippingAddress = request.ShippingAddress,
             TotalAmount = request.TotalPrice,
+            Phone = request.Phone,
 
             // trạng thái giao hàng
             Status = "PENDING",
@@ -100,6 +101,7 @@ public class OrdersController : ControllerBase
                 o.TotalAmount,
                 o.Status,
                 o.StatusFee,
+                o.Phone,
                 o.ShippingAddress,
                 Items = o.OrderItems.Select(i => new
                 {
@@ -121,7 +123,7 @@ public class OrdersController : ControllerBase
         try
         {
             data = await _payOSService.VerifyWebhookAsync(webhook);
-            Console.WriteLine("Webhook verified successfully : "+data);
+            Console.WriteLine("Webhook verified successfully : " + data);
         }
         catch
         {

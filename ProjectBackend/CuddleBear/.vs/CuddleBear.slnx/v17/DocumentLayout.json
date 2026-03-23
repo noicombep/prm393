@@ -1,0 +1,335 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\ipayosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\ipayosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\service\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\cuddlebear.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\cuddlebear.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\models\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\apps\\project\\projectbackend\\cuddlebear\\cuddlebear\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Repository\\OrderRepository.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "CuddleBear\\Repository\\OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:32.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Repository\\IProductRepository.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\IProductRepository.cs",
+              "RelativeToolTip": "CuddleBear\\Repository\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:31.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "CuddleBear\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:24.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\EmailService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\EmailService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\EmailService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\EmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:21.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IOrderService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\IOrderService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IOrderService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:21.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAswCEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:07:58.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\appsettings.json",
+              "RelativeDocumentMoniker": "CuddleBear\\appsettings.json",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\appsettings.json",
+              "RelativeToolTip": "CuddleBear\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-23T18:07:43.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPayOSService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IPayOSService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\IPayOSService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IPayOSService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\IPayOSService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:10:00.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IProductService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\IProductService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\IProductService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:09:58.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\OrderService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\OrderService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\OrderService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:09:57.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PayOSService.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\PayOSService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\PayOSService.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Service\\PayOSService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\PayOSService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:09:56.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "CuddleBear\\appsettings.Development.json",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\appsettings.Development.json",
+              "RelativeToolTip": "CuddleBear\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-23T18:09:30.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CuddleBear.http",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\CuddleBear.http",
+              "RelativeDocumentMoniker": "CuddleBear\\CuddleBear.http",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\CuddleBear.http",
+              "RelativeToolTip": "CuddleBear\\CuddleBear.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-23T18:09:28.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateOrderRequest.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\CreateOrderRequest.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\CreateOrderRequest.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\CreateOrderRequest.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\CreateOrderRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:08:39.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\OrderItem.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:08:29.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Program.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Program.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Program.cs",
+              "RelativeToolTip": "CuddleBear\\Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:07:47.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\Order.cs",
+              "ToolTip": "C:\\Apps\\project\\ProjectBackend\\CuddleBear\\CuddleBear\\Models\\Order.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\Order.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:08:10.565Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1006,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:47:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
