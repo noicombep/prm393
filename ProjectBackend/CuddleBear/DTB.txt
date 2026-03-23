@@ -95,6 +95,23 @@ CREATE TABLE EmailOtps (
 );
 
 
+CREATE TABLE Blogs (
+    Id INT IDENTITY PRIMARY KEY,
+    UserId INT,
+    Title NVARCHAR(200),
+    Content NVARCHAR(MAX),
+    ImageUrl NVARCHAR(255),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+ALTER TABLE Blogs
+ADD CONSTRAINT FK_Blogs_Users
+FOREIGN KEY (UserId) REFERENCES Users(Id);
+
+ALTER TABLE Blogs
+ADD Likes INT DEFAULT 0;
+
+ALTER TABLE Users
+ADD CONSTRAINT DF_Users_IsActive DEFAULT 1 FOR IsActive;
 INSERT INTO Roles ( Name) VALUES
 ( 'Admin'),
 ( 'Customer');

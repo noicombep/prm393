@@ -21,7 +21,7 @@ public partial class User
 
     public int RoleId { get; set; }
 
-    public bool? IsActive { get; set; }
+    public bool IsActive { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -32,4 +32,6 @@ public partial class User
     public virtual Role Role { get; set; } = null!;
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+
+    public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
 }

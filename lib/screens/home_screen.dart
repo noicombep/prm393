@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../services/product_service.dart';
 import '../widgets/product_card.dart';
+import '../services/session_service.dart';
+import '../routes/app_routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,11 +15,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Future<List<Product>> _productsFuture;
-
+  String? role;
   @override
   void initState() {
     super.initState();
     _productsFuture = ProductService().getProducts();
+    loadRole();
+  }
+
+  Future<void> loadRole() async {
+    role = await SessionService.getRole();
+    setState(() {});
   }
 
   @override
@@ -27,16 +35,19 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         title: const Text(
           "MemoSoft 🧸",
-          style: TextStyle(
-            color: Colors.pink,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.pink),
             onPressed: () => Navigator.pushNamed(context, "/cart"),
           ),
+          if (role == "Admin")
+            IconButton(
+              icon: const Icon(Icons.admin_panel_settings, color: Colors.pink),
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.customers),
+            ),
         ],
       ),
       body: SingleChildScrollView(
@@ -51,10 +62,7 @@ class _HomePageState extends State<HomePage> {
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
-                Container(
-                  height: 400,
-                  color: Colors.pink.withOpacity(0.4),
-                ),
+                Container(height: 400, color: Colors.pink.withOpacity(0.4)),
                 Positioned.fill(
                   child: Center(
                     child: Column(
@@ -71,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                 blurRadius: 6,
                                 color: Colors.black45,
                                 offset: Offset(2, 2),
-                              )
+                              ),
                             ],
                           ),
                           textAlign: TextAlign.center,
@@ -79,10 +87,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 12),
                         const Text(
                           "Discover the coziest teddy bears",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white70,
-                          ),
+                          style: TextStyle(fontSize: 18, color: Colors.white70),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 20),
@@ -110,11 +115,11 @@ class _HomePageState extends State<HomePage> {
                               child: const Text("Scan QR"),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
 
@@ -124,8 +129,10 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Featured Products",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  Text(
+                    "Featured Products",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const SizedBox(height: 16),
                   FutureBuilder<List<Product>>(
                     future: _productsFuture,
@@ -135,7 +142,9 @@ class _HomePageState extends State<HomePage> {
                       } else if (snapshot.hasError) {
                         return Center(child: Text("Error: ${snapshot.error}"));
                       } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                        return const Center(child: Text("No products available"));
+                        return const Center(
+                          child: Text("No products available"),
+                        );
                       }
 
                       final products = snapshot.data!;
@@ -143,12 +152,13 @@ class _HomePageState extends State<HomePage> {
                       return GridView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.75,
-                          crossAxisSpacing: 12,
-                          mainAxisSpacing: 12,
-                        ),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 0.75,
+                              crossAxisSpacing: 12,
+                              mainAxisSpacing: 12,
+                            ),
                         itemCount: products.length,
                         itemBuilder: (context, index) {
                           return ProductCard(product: products[index]);
@@ -166,20 +176,28 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
               child: Column(
                 children: [
-                  Text("Why Choose MemoSoft?",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  Text(
+                    "Why Choose MemoSoft?",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      InfoCard("Ultra Soft Material",
-                          "https://api.shopgau.store/images/bear4.jpg"),
-                      InfoCard("Unique Cute Designs",
-                          "https://api.shopgau.store/images/bear6.jpg"),
-                      InfoCard("Perfect Gift",
-                          "https://api.shopgau.store/images/bear7.jpg"),
+                      InfoCard(
+                        "Ultra Soft Material",
+                        "https://api.shopgau.store/images/bear4.jpg",
+                      ),
+                      InfoCard(
+                        "Unique Cute Designs",
+                        "https://api.shopgau.store/images/bear6.jpg",
+                      ),
+                      InfoCard(
+                        "Perfect Gift",
+                        "https://api.shopgau.store/images/bear7.jpg",
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -190,24 +208,38 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
               child: Column(
                 children: [
-                  Text("Shopping Made Simple",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  Text(
+                    "Shopping Made Simple",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const SizedBox(height: 20),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: const [
-                        StepItem("🧸", "Choose a Teddy",
-                            "Browse our lovely collection."),
+                        StepItem(
+                          "🧸",
+                          "Choose a Teddy",
+                          "Browse our lovely collection.",
+                        ),
                         SizedBox(width: 12),
-                        StepItem("🛒", "Add to Cart",
-                            "Pick your favorite bear."),
+                        StepItem(
+                          "🛒",
+                          "Add to Cart",
+                          "Pick your favorite bear.",
+                        ),
                         SizedBox(width: 12),
-                        StepItem("💳", "Secure Checkout",
-                            "Pay easily and safely."),
+                        StepItem(
+                          "💳",
+                          "Secure Checkout",
+                          "Pay easily and safely.",
+                        ),
                         SizedBox(width: 12),
-                        StepItem("📦", "Fast Delivery",
-                            "Receive at your door."),
+                        StepItem(
+                          "📦",
+                          "Fast Delivery",
+                          "Receive at your door.",
+                        ),
                       ],
                     ),
                   ),
@@ -220,8 +252,10 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text("Trending Teddy Bears",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  Text(
+                    "Trending Teddy Bears",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const SizedBox(height: 16),
                   GridView.count(
                     shrinkWrap: true,
@@ -248,25 +282,41 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text("From Our Blog",
-                      style: Theme.of(context).textTheme.headlineMedium),
+                  Text(
+                    "From Our Blog",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      Expanded(child: _blogCard("How to Choose a Teddy",
-                          "https://api.shopgau.store/images/bear1.jpg")),
-                      Expanded(child: _blogCard("Teddy Bears as Gifts",
-                          "https://api.shopgau.store/images/bear2.jpg")),
-                      Expanded(child: _blogCard("Caring for Your Teddy",
-                          "https://api.shopgau.store/images/bear3.jpg")),
+                      Expanded(
+                        child: _blogCard(
+                          "How to Choose a Teddy",
+                          "https://api.shopgau.store/images/bear1.jpg",
+                        ),
+                      ),
+                      Expanded(
+                        child: _blogCard(
+                          "Teddy Bears as Gifts",
+                          "https://api.shopgau.store/images/bear2.jpg",
+                        ),
+                      ),
+                      Expanded(
+                        child: _blogCard(
+                          "Caring for Your Teddy",
+                          "https://api.shopgau.store/images/bear3.jpg",
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 12),
                   ElevatedButton(
                     onPressed: () => Navigator.pushNamed(context, "/blog"),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.pink,
+                    ),
                     child: const Text("View All Blog Posts"),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -291,13 +341,15 @@ class _HomePageState extends State<HomePage> {
                       backgroundColor: Colors.pink,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 24, vertical: 12),
+                        horizontal: 24,
+                        vertical: 12,
+                      ),
                     ),
                     child: const Text("Browse All Products"),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -307,7 +359,10 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.list), label: "Products"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: "Cart",
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
         ],
         onTap: (index) {
@@ -366,7 +421,12 @@ Widget _blogCard(String title, String imgUrl) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.network(imgUrl, height: 120, fit: BoxFit.cover, width: double.infinity),
+        Image.network(
+          imgUrl,
+          height: 120,
+          fit: BoxFit.cover,
+          width: double.infinity,
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
