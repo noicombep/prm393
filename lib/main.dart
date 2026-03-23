@@ -4,8 +4,17 @@ import 'routes/app_routes.dart';
 import 'providers/cart_provider.dart';
 import 'providers/theme_provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final cartProvider = CartProvider();
+  await cartProvider.loadCart(); 
+
+  runApp(
+    ChangeNotifierProvider.value(
+      value: cartProvider,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
       ],
+
       child: Consumer<ThemeProvider>(
         // 👈 bọc ở đây
         builder: (context, themeProvider, child) {
@@ -41,6 +51,7 @@ class MyApp extends StatelessWidget {
             onGenerateRoute: AppRoutes.generateRoute,
           );
         },
+
       ),
     );
   }

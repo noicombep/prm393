@@ -2,12 +2,14 @@ import 'package:dio/dio.dart';
 import '../models/product.dart';
 
 class ProductService {
+
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: "http://10.0.2.2:5059/api", // Giả sử API này
       headers: {"Content-Type": "application/json"},
     ),
   );
+
 
   Future<List<Product>> getProducts() async {
     try {

@@ -4,12 +4,14 @@ import 'dart:io';
 import 'package:dio/io.dart';
 
 class AuthService {
+
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: "http://10.0.2.2:5059/api",
       headers: {"Content-Type": "application/json"},
     ),
   );
+
 
   Future<bool> login(String email, String password) async {
     try {
