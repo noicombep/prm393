@@ -2,7 +2,6 @@ class Category {
   final int id;
   final String name;
   final bool isActive;
-  // Note: products is omitted to avoid circular reference
 
   Category({
     required this.id,
@@ -10,11 +9,21 @@ class Category {
     required this.isActive,
   });
 
+  // ✅ FROM JSON (an toàn hơn)
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
-      id: json['id'],
-      name: json['name'],
-      isActive: json['isActive'],
+      id: json['id'] ?? 0,
+      name: json['name'] ?? '',
+      isActive: json['isActive'] ?? true,
     );
+  }
+
+  // ✅ TO JSON (bắt buộc nếu lưu local)
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'isActive': isActive,
+    };
   }
 }
