@@ -31,9 +31,20 @@ class _SignupScreenState extends State<SignupScreen> {
       usernameError = usernameController.text.isEmpty
           ? "Username is required"
           : null;
-      emailError = emailController.text.isEmpty ? "Email is required" : null;
+      emailError = emailController.text.isEmpty
+          ? "Email is required"
+          : !RegExp(r'^[\w.-]+@[\w.-]+\.\w+$').hasMatch(emailController.text)
+          ? "Email không đúng định dạng"
+          : null;
       passwordError = passwordController.text.isEmpty
           ? "Password is required"
+          : passwordController.text.length < 8 ||
+                !passwordController.text.contains(RegExp(r'[A-Z]')) ||
+                !passwordController.text.contains(RegExp(r'[a-z]')) ||
+                !passwordController.text.contains(
+                  RegExp(r'[!@#\$%^&*(),.?":{}|<>]'),
+                )
+          ? "Mật khẩu phải ≥ 8 ký tự, gồm chữ hoa, chữ thường và kí tự đặc biệt"
           : null;
       confirmPasswordError = confirmPasswordController.text.isEmpty
           ? "Confirm Password is required"
@@ -59,24 +70,25 @@ class _SignupScreenState extends State<SignupScreen> {
     });
 
     try {
-      final success = await auth.register(
+      await auth.register(
         usernameController.text,
         emailController.text,
         passwordController.text,
       );
 
-      if (success) {
-        if (mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(const SnackBar(content: Text("Register success")));
-
-          Navigator.pushReplacementNamed(context, AppRoutes.login);
-        }
-      } else {
-        setState(() {
-          alertMessage = "Register failed";
-        });
+      if (mounted) {
+        print("username: ${usernameController.text}");
+        print("email: ${emailController.text}");
+        // chuyển sang màn hình OTP, truyền thông tin sang
+        Navigator.pushNamed(
+          context,
+          AppRoutes.otp,
+          arguments: {
+            "username": usernameController.text,
+            "email": emailController.text,
+            "password": passwordController.text,
+          },
+        );
       }
     } catch (e) {
       setState(() {

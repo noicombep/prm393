@@ -10,6 +10,7 @@ import '../screens/checkout_screen.dart';
 import '../screens/account_screen.dart';
 import '../screens/qr_screen.dart';
 import '../screens/blog_screen.dart';
+import '../screens/otp_screen.dart';
 
 class AppRoutes {
   static const String splash = "/";
@@ -23,33 +24,23 @@ class AppRoutes {
   static const String account = "/account";
   static const String sendQr = "/send-qr";
   static const String blog = "/blog";
-
+  static const String otp = "/otp";
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splash:
-        return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       case login:
-        return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       case signup:
-        return MaterialPageRoute(
-          builder: (_) => const SignupScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const SignupScreen());
 
       case home:
-        return MaterialPageRoute(
-          builder: (_) => HomePage(),
-        );
+        return MaterialPageRoute(builder: (_) => HomePage());
 
       case products:
-        return MaterialPageRoute(
-          builder: (_) => const ProductsScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const ProductsScreen());
 
       case productDetail:
         final productId = settings.arguments as int;
@@ -58,35 +49,29 @@ class AppRoutes {
         );
 
       case cart:
-        return MaterialPageRoute(
-          builder: (_) => const CartScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const CartScreen());
 
       case checkout:
-        return MaterialPageRoute(
-          builder: (_) => const CheckoutScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const CheckoutScreen());
 
       case account:
-        return MaterialPageRoute(
-          builder: (_) => const AccountScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const AccountScreen());
 
       case sendQr:
-        return MaterialPageRoute(
-          builder: (_) => const QrScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const QrScreen());
 
       case blog:
-        return MaterialPageRoute(
-          builder: (_) => const BlogScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const BlogScreen());
 
+      case otp:
+        return MaterialPageRoute(
+          builder: (_) => const OtpScreen(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
-            body: Center(child: Text("Route not found")),
-          ),
+          builder: (_) =>
+              const Scaffold(body: Center(child: Text("Route not found"))),
         );
     }
   }

@@ -17,16 +17,17 @@ class _LoginScreenState extends State<LoginScreen> {
   String? emailError;
   String? passwordError;
   String? alertMessage;
-
+  bool showPassword = false;
   bool loading = false;
 
   final auth = AuthService();
 
-
   void validateForm() {
     setState(() {
       emailError = emailController.text.isEmpty ? "Email is required" : null;
-      passwordError = passwordController.text.isEmpty ? "Password is required" : null;
+      passwordError = passwordController.text.isEmpty
+          ? "Password is required"
+          : null;
     });
   }
 
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       if (success) {
-        final token = await SessionService.getToken(); // nếu cần
+        final token = await SessionService.getToken();
         if (mounted) {
           Navigator.pushReplacementNamed(
             context,
@@ -55,14 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
             arguments: token,
           );
         }
-      } else {
-        setState(() {
-          alertMessage = "Login failed";
-        });
       }
     } catch (e) {
       setState(() {
-        alertMessage = "Error: $e";
+        alertMessage = e.toString();
       });
     } finally {
       setState(() {
@@ -84,10 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    const Text(
-                      "Login",
-                      style: TextStyle(fontSize: 24),
-                    ),
+                    const Text("Login", style: TextStyle(fontSize: 24)),
 
                     const SizedBox(height: 20),
 
@@ -116,11 +110,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Password
                     TextField(
                       controller: passwordController,
-                      obscureText: true,
+                      obscureText: !showPassword,
                       decoration: InputDecoration(
                         labelText: "Password",
                         errorText: passwordError,
                         border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            showPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              showPassword = !showPassword;
+                            });
+                          },
+                        ),
                       ),
                     ),
 
@@ -132,7 +138,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: loading ? null : handleLogin,
                         child: loading
-                            ? const CircularProgressIndicator(color: Colors.white)
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
                             : const Text("Login"),
                       ),
                     ),
@@ -144,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, AppRoutes.signup);
                       },
                       child: const Text("Don't have account? Register"),
-                    )
+                    ),
                   ],
                 ),
               ),
