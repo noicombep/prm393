@@ -1,0 +1,63 @@
+﻿<input id="username" placeholder="Username">
+<div id="usernameError" class="error"></div>
+
+<input id="email" placeholder="Email">
+<div id="emailError" class="error"></div>
+
+<input id="password" type="password" placeholder="Mật khẩu">
+<div id="passwordError" class="error"></div>
+
+<button onclick="register()">Đăng ký</button>
+
+<style>
+.error {
+    color: red;
+    font-size: 13px;
+}
+</style>
+
+<script>
+function clearErrors() {
+    usernameError.innerText = "";
+    emailError.innerText = "";
+    passwordError.innerText = "";
+}
+
+async function register() {
+    clearErrors();
+
+    const res = await fetch("https://localhost:7131/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            username: document.getElementById("username").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        })
+    });
+
+    if (res.ok) {
+        alert("Đăng ký thành công");
+        location.href = "login.html";
+        return;
+    }
+
+    const data = await res.json();
+
+    // 🔴 Validation từ ModelState
+    if (data.errors) {
+        if (data.errors.Username)
+            usernameError.innerText = data.errors.Username[0];
+
+        if (data.errors.Email)
+            emailError.innerText = data.errors.Email[0];
+
+        if (data.errors.Password)
+            passwordError.innerText = data.errors.Password[0];
+    }
+    // 🔴 Custom validation (email trùng, password yếu)
+    else if (data.field) {
+        document.getElementById(data.field + "Error").innerText = data.message;
+    }
+}
+</script>

@@ -1,0 +1,562 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\payoswebhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\payoswebhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\service\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\service\\ipayosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\ipayosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\service\\qrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\qrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\qrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\qrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\qrmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\qrmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\sendqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\sendqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\bearshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\bearshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\wwwroot\\images\\img11.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\wwwroot\\images\\img11.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\wwwroot\\images\\img10.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\wwwroot\\images\\img10.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\wwwroot\\images\\img9.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\wwwroot\\images\\img9.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\wwwroot\\images\\img8.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\wwwroot\\images\\img8.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\wwwroot\\images\\img3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\wwwroot\\images\\img3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\verifyotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\verifyotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|c:\\users\\xuanq\\onedrive\\desktop\\gau\\cuddlebear\\cuddlebear\\cuddlebear\\models\\emailotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C46537B4-67C1-18F9-61EB-4D76DB9C89E4}|CuddleBear\\CuddleBear.csproj|solutionrelative:cuddlebear\\models\\emailotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 31,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\CartController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T16:30:08.405Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\IProductService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\IProductService.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\IProductService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T01:06:31.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QRController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\QRController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\QRController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\QRController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\QRController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:35:35.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SendQRRequest.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\SendQRRequest.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\SendQRRequest.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\SendQRRequest.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\SendQRRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:29:59.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QrService.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\QrService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\QrService.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\QrService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\QrService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:28:53.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Notification.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:25:06.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QRMessage.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\QRMessage.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\QRMessage.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\QRMessage.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\QRMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:24:36.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReviewDTO.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\ReviewDTO.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\ReviewDTO.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\ReviewDTO.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\ReviewDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T17:38:31.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\ReviewsController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:40:16.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\User.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\User.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\User.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA6wCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:25:51.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Review.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:19:30.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\Product.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\Product.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:18:40.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "img11.jpg",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img11.jpg",
+              "RelativeDocumentMoniker": "CuddleBear\\wwwroot\\images\\img11.jpg",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img11.jpg",
+              "RelativeToolTip": "CuddleBear\\wwwroot\\images\\img11.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-15T15:11:32.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "img9.jpg",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img9.jpg",
+              "RelativeDocumentMoniker": "CuddleBear\\wwwroot\\images\\img9.jpg",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img9.jpg",
+              "RelativeToolTip": "CuddleBear\\wwwroot\\images\\img9.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-15T15:11:29.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "img8.jpg",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img8.jpg",
+              "RelativeDocumentMoniker": "CuddleBear\\wwwroot\\images\\img8.jpg",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img8.jpg",
+              "RelativeToolTip": "CuddleBear\\wwwroot\\images\\img8.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-15T15:11:26.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "img3.jpg",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img3.jpg",
+              "RelativeDocumentMoniker": "CuddleBear\\wwwroot\\images\\img3.jpg",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img3.jpg",
+              "RelativeToolTip": "CuddleBear\\wwwroot\\images\\img3.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-15T15:11:22.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "img10.jpg",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img10.jpg",
+              "RelativeDocumentMoniker": "CuddleBear\\wwwroot\\images\\img10.jpg",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\wwwroot\\images\\img10.jpg",
+              "RelativeToolTip": "CuddleBear\\wwwroot\\images\\img10.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-03-15T15:11:00.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PayOSService.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\PayOSService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\PayOSService.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\PayOSService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\PayOSService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T10:15:44.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\CheckoutController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\CheckoutController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwD0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T10:09:43.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T10:09:26.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PayOSWebhookController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\PayOSWebhookController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\PayOSWebhookController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\PayOSWebhookController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\PayOSWebhookController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T09:58:53.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IPayOSService.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\IPayOSService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\IPayOSService.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\IPayOSService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\IPayOSService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T09:58:34.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "VerifyOtpDto.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\VerifyOtpDto.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\VerifyOtpDto.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\VerifyOtpDto.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\VerifyOtpDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T09:35:20.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\EmailService.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Service\\EmailService.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Service\\EmailService.cs",
+              "RelativeToolTip": "CuddleBear\\Service\\EmailService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T09:16:56.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EmailOtp.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\EmailOtp.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\EmailOtp.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\EmailOtp.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\EmailOtp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T09:15:56.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BearShopDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\BearShopDbContext.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Models\\BearShopDbContext.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Models\\BearShopDbContext.cs",
+              "RelativeToolTip": "CuddleBear\\Models\\BearShopDbContext.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAIwPgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T06:37:24.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwBIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T16:21:52.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CuddleBear\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAuwKEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T16:21:18.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\appsettings.json",
+              "RelativeDocumentMoniker": "CuddleBear\\appsettings.json",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\appsettings.json",
+              "RelativeToolTip": "CuddleBear\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-02T16:04:01.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Program.cs",
+              "RelativeDocumentMoniker": "CuddleBear\\Program.cs",
+              "ToolTip": "C:\\Users\\xuanq\\OneDrive\\Desktop\\gau\\CuddleBear\\CuddleBear\\CuddleBear\\Program.cs",
+              "RelativeToolTip": "CuddleBear\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T16:03:26.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAACMVAAAAAAAAAAD4vzUVAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-02T16:03:23.531Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
