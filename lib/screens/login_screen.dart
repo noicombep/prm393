@@ -22,11 +22,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final auth = AuthService();
 
-
   void validateForm() {
     setState(() {
       emailError = emailController.text.isEmpty ? "Email is required" : null;
-      passwordError = passwordController.text.isEmpty ? "Password is required" : null;
+      passwordError = passwordController.text.isEmpty
+          ? "Password is required"
+          : null;
     });
   }
 
@@ -57,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
         }
       } else {
         setState(() {
-          alertMessage = "Login failed";
+          alertMessage = "Login failed or locked account";
         });
       }
     } catch (e) {
@@ -84,10 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    const Text(
-                      "Login",
-                      style: TextStyle(fontSize: 24),
-                    ),
+                    const Text("Login", style: TextStyle(fontSize: 24)),
 
                     const SizedBox(height: 20),
 
@@ -132,7 +130,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: loading ? null : handleLogin,
                         child: loading
-                            ? const CircularProgressIndicator(color: Colors.white)
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
                             : const Text("Login"),
                       ),
                     ),
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, AppRoutes.signup);
                       },
                       child: const Text("Don't have account? Register"),
-                    )
+                    ),
                   ],
                 ),
               ),
