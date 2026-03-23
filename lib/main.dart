@@ -3,8 +3,17 @@ import 'package:provider/provider.dart';
 import 'routes/app_routes.dart';
 import 'providers/cart_provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final cartProvider = CartProvider();
+  await cartProvider.loadCart(); 
+
+  runApp(
+    ChangeNotifierProvider.value(
+      value: cartProvider,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: 'TeddyBear Store 🧸',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.pink, // hợp vibe shop gấu 😆
+            seedColor: Colors.pink, 
           ),
         ),
         initialRoute: AppRoutes.splash,

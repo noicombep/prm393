@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../models/order.dart';
 import '../providers/cart_provider.dart';
-import '../models/cart.dart';
-
+import 'checkout_screen.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
   String formatPrice(double price) {
     return "${price.toStringAsFixed(0)} đ";
+  }
+
+  List<OrderItemRequest> buildItems(cart) {
+    return cart.items.map<OrderItemRequest>((e) {
+      return OrderItemRequest(
+        productName: e.product.name,
+        quantity: e.quantity,
+        price: e.product.price,
+      );
+    }).toList();
   }
 
   @override
@@ -24,7 +33,6 @@ class CartScreen extends StatelessWidget {
 
       body: cart.items.isEmpty
           ? const Center(child: Text("Cart is empty"))
-
           : Column(
               children: [
                 // 🛒 LIST
@@ -36,7 +44,9 @@ class CartScreen extends StatelessWidget {
 
                       return Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 6),
+                          horizontal: 10,
+                          vertical: 6,
+                        ),
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -45,7 +55,7 @@ class CartScreen extends StatelessWidget {
                             BoxShadow(
                               blurRadius: 4,
                               color: Colors.grey.withOpacity(0.2),
-                            )
+                            ),
                           ],
                         ),
 
@@ -82,9 +92,7 @@ class CartScreen extends StatelessWidget {
 
                                   Text(
                                     formatPrice(item.product.price),
-                                    style: const TextStyle(
-                                      color: Colors.pink,
-                                    ),
+                                    style: const TextStyle(color: Colors.pink),
                                   ),
                                 ],
                               ),
@@ -109,7 +117,8 @@ class CartScreen extends StatelessWidget {
                                     Text(
                                       "${item.quantity}",
                                       style: const TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
 
                                     IconButton(
@@ -123,11 +132,13 @@ class CartScreen extends StatelessWidget {
                                             newQty,
                                           );
                                         } else {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
                                             const SnackBar(
-                                              content:
-                                                  Text("Vượt quá tồn kho ❌"),
+                                              content: Text(
+                                                "Vượt quá tồn kho ❌",
+                                              ),
                                             ),
                                           );
                                         }
@@ -143,7 +154,8 @@ class CartScreen extends StatelessWidget {
                                   ),
                                   onPressed: () {
                                     cartProvider.removeFromCart(
-                                        item.product.id);
+                                      item.product.id,
+                                    );
                                   },
                                 ),
                               ],
@@ -164,7 +176,7 @@ class CartScreen extends StatelessWidget {
                       BoxShadow(
                         blurRadius: 5,
                         color: Colors.grey.withOpacity(0.3),
-                      )
+                      ),
                     ],
                   ),
 
@@ -173,10 +185,7 @@ class CartScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "Total:",
-                            style: TextStyle(fontSize: 18),
-                          ),
+                          const Text("Total:", style: TextStyle(fontSize: 18)),
                           Text(
                             formatPrice(cartProvider.totalPrice),
                             style: const TextStyle(
@@ -194,15 +203,16 @@ class CartScreen extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text("Checkout coming soon")),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const CheckoutScreen(),
+                              ),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pink,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 14),
+                            padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
                           child: const Text("Checkout"),
                         ),
