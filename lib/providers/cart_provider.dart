@@ -96,6 +96,7 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
+
   // 📊 Get quantity
   int getQuantity(int productId) {
     try {
@@ -124,3 +125,4 @@ class CartProvider with ChangeNotifier {
     return _cart.items.fold(0, (sum, item) => sum + item.quantity);
   }
 }
+
