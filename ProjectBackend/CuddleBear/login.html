@@ -1,0 +1,56 @@
+﻿<input id="email" placeholder="Email">
+<div id="emailError" class="error"></div>
+
+<input id="password" type="password" placeholder="Mật khẩu">
+<div id="passwordError" class="error"></div>
+
+<div id="loginError" class="error"></div>
+
+<button onclick="login()">Đăng nhập</button>
+
+<style>
+    .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+</style>
+<script>
+    function clearErrors() {
+        emailError.innerText = "";
+        passwordError.innerText = "";
+        loginError.innerText = "";
+    }
+
+    async function login() {
+        clearErrors();
+
+        const res = await fetch("https://localhost:7131/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            })
+        });
+
+        if (res.ok) {
+            const data = await res.json();
+
+            // 🔐 lưu vào sessionStorage (theo code hiện tại của bạn)
+            sessionStorage.setItem("token", data.token);
+            sessionStorage.setItem("userName", data.fullName);
+            sessionStorage.setItem("role", data.role);
+
+            location.href = "Home.html";
+            return;
+        }
+
+        const data = await res.json();
+
+        // 🔴 Sai email hoặc mật khẩu
+        if (data.field === "login") {
+            loginError.innerText = data.message;
+        }
+    }
+</script>

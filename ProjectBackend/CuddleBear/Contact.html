@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Gấu bông | CuddleBear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🧸 CuddleBear</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="Home.html">Trang chủ</a>
+                <a class="nav-link active" href="product.html">Gấu bông</a>
+                <a class="nav-link" href="contact.html">Liên hệ</a>
+                <a class="nav-link" href="contact.html">Đăng ký</a>
+                <a class="nav-link" href="contact.html">Đăng nhập</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">🐻 Danh sách gấu bông</h2>
+        <div class="row" id="productList"></div>
+    </div>
+
+    <script>
+fetch("https://localhost:7131/api/products")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("productList");
+
+    data.forEach(p => {
+      list.innerHTML += `
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="${p.imageUrl || 'https://via.placeholder.com/300'}"
+                 class="card-img-top"
+                 style="height:220px; object-fit:cover">
+            <div class="card-body text-center">
+              <h5>${p.name}</h5>
+              <p class="text-danger fw-bold">${p.price.toLocaleString()} ₫</p>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  });
+    </script>
+
+</body>
+</html>

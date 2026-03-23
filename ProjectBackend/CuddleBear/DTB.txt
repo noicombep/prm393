@@ -1,0 +1,142 @@
+CREATE DATABASE BearShopDB;
+GO
+
+USE BearShopDB;
+GO
+CREATE TABLE Users (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    FullName NVARCHAR(100) NULL,
+    Phone NVARCHAR(20) NULL,
+    Address NVARCHAR(255) NULL,
+    RoleId INT NOT NULL,
+    IsActive BIT NULL,
+    CreatedAt DATETIME NULL
+);
+CREATE TABLE Roles (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(50) NOT NULL
+);
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Roles
+FOREIGN KEY (RoleId) REFERENCES Roles(Id);
+CREATE TABLE Categories (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    IsActive BIT NULL
+);
+CREATE TABLE Products (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(150) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    Stock INT NOT NULL,
+    ImageUrl NVARCHAR(255) NULL,
+    CategoryId INT NOT NULL,
+    IsActive BIT NULL,
+    CreatedAt DATETIME NULL
+);
+ALTER TABLE Products
+ADD CONSTRAINT FK_Products_Categories
+FOREIGN KEY (CategoryId) REFERENCES Categories(Id);
+CREATE TABLE Carts (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL,
+    CreatedAt DATETIME NULL
+);
+ALTER TABLE Carts
+ADD CONSTRAINT FK_Carts_Users
+FOREIGN KEY (UserId) REFERENCES Users(Id);
+CREATE TABLE CartItems (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    CartId INT NOT NULL,
+    ProductId INT NOT NULL,
+    Quantity INT NOT NULL,
+    Price DECIMAL(18,2) NOT NULL
+);
+ALTER TABLE CartItems
+ADD CONSTRAINT FK_CartItems_Carts
+FOREIGN KEY (CartId) REFERENCES Carts(Id);
+
+ALTER TABLE CartItems
+ADD CONSTRAINT FK_CartItems_Products
+FOREIGN KEY (ProductId) REFERENCES Products(Id);
+CREATE TABLE Orders (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL,
+    TotalAmount DECIMAL(18,2) NOT NULL,
+    Status NVARCHAR(50) NULL,
+    ShippingAddress NVARCHAR(255) NULL,
+    CreatedAt DATETIME NULL,
+    StatusFee NVARCHAR(50) NULL
+);
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_Users
+FOREIGN KEY (UserId) REFERENCES Users(Id);
+CREATE TABLE OrderItems (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    OrderId INT NOT NULL,
+    ProductName NVARCHAR(150) NOT NULL,
+    Quantity INT NOT NULL,
+    Price DECIMAL(18,2) NOT NULL
+);
+ALTER TABLE OrderItems
+ADD CONSTRAINT FK_OrderItems_Orders
+FOREIGN KEY (OrderId) REFERENCES Orders(Id);
+
+
+CREATE TABLE EmailOtps (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Email NVARCHAR(100) NOT NULL,
+    OtpCode NVARCHAR(10) NOT NULL,
+    ExpireAt DATETIME NOT NULL
+);
+
+
+INSERT INTO Roles ( Name) VALUES
+( 'Admin'),
+( 'Customer');
+
+
+INSERT INTO Users ( Username, Email, PasswordHash, FullName, Phone, Address, RoleId, IsActive, CreatedAt) VALUES
+( 'admin', 'admin@bearshop.com', 'hashed_admin_password', 'Admin Bear', '0900000001', 'Hà Nội', 1, 1, '2026-01-28 01:50:56.553'),
+( 'customer1', 'customer1@gmail.com', 'hashed_customer_password', 'Khách Hàng 1', '0900000002', 'TP HCM', 2, 1, '2026-01-28 01:50:56.553'),
+( N'Đoàn Xuân Quân', 'quandxhe18l250@fpt.edu.vn', '$2a$11$abEq0CTolP...Sk...', NULL, NULL, NULL, 2, 1, '2026-01-28 04:52:11.873'),
+( 'quandxunix29', 'xuanquanyd@gmail.com', '$2a$11$abEq0CTolP...Sk...', NULL, NULL, NULL, 2, 1, '2026-01-28 12:28:21.470'),
+( 'customer2', 'customer2@gmail.com', 'hashed_customer2_password', 'Khách Hàng 2', '0900000003', N'Đà Nẵng', 2, 1, '2026-01-28 15:32:30.580'),
+( 'customer3', 'customer3@gmail.com', 'hashed_customer3_password', 'Khách Hàng 3', '0900000004', N'Cần Thơ', 2, 1, '2026-01-28 15:32:30.580'),
+( 'quandxunvix28', 'xuanquanyd@gmail.com', '$2a$11$sdOPLUlisKx0/...FPHBZ', NULL, NULL, NULL, 2, 1, '2026-01-31 15:40:23.997');
+
+
+INSERT INTO Categories ( Name, IsActive) VALUES
+( N'Bó hoa gấu', 1),
+( N'Túi gấu & Hộp gấu mica', 1),
+( N'Baby Three', 1),
+( N'Gấu treo tường', 1);
+
+
+INSERT INTO Products ( Name, Description, Price, Stock, ImageUrl, CategoryId, IsActive, CreatedAt) VALUES
+( N'Bó Hoa 3 gấu', N'Gấu teddy nâu mềm mại, thích hợp làm quà tặng', 1300000, 20, '/images/img3.jpg', 1, 1, '2026-01-28 01:50:56.557'),
+( N'Bó Hoa 5 gấu', N'Gấu teddy trắng dễ thương', 1500000, 15, '/images/img4.jpg', 1, 1, '2026-01-28 01:50:56.557'),
+( N'Bó hoa gấu', N'Gấu bông Doraemon cho fan hoạt hình', 1600000, 12, '/images/img5.jpg', 1, 1, '2026-01-28 15:32:30.580'),
+( N'Set túi gấu', N'Gấu teddy màu hồng dành cho bé gái', 1300000, 18, '/images/img7.jpg', 2, 1, '2026-01-28 15:32:30.580'),
+( N'Set hộp gấu mica', N'Gấu bông Pooh đáng yêu', 1400000, 10, '/images/img3.jpg', 2, 1, '2026-01-28 15:32:30.580'),
+( N'Set MCR set 6', N'Gấu đôi ôm trái tim, quà tặng couple', 1650000, 8, '/images/img8.jpg', 3, 1, '2026-01-28 15:32:30.580'),
+( N'Lala VA set 6', N'Gấu bông size lớn kèm nơ sinh nhật', 1900000, 6, '/images/img9.jpg', 3, 1, '2026-01-28 15:32:30.580'),
+( N'Thỏ loli art set 6', N'Gấu teddy màu hồng dành cho bé gái', 1990000, 15, '/images/img9.jpg', 3, 1, '2026-01-28 15:33:24.390'),
+( N'Thỏ loli art set 6', N'Gấu bông Pooh đáng yêu', 1990000, 12, '/images/img9.jpg', 3, 1, '2026-01-28 15:33:24.390'),
+( N'Gấu Đôi Trái Tim', N'Gấu đôi ôm trái tim, quà tặng couple', 4500000, 8, '/images/img9.jpg', 4, 1, '2026-01-28 15:33:24.390'),
+( N'Set trang trí gấu treo tường', N'Gấu bông size lớn kèm nơ sinh nhật', 500000, 5, '/images/img10.jpg', 4, 1, '2026-01-28 15:33:24.390'),
+( N'Set Labubu macaron', N'Set Labubu macaron', 6000000, 10, '/images/img11.jpg', 3, 1, '2026-02-02 00:46:15.333');
+
+
+
+INSERT INTO Carts ( UserId, CreatedAt) VALUES
+( 2, '2026-01-28 01:50:56.557');
+
+
+INSERT INTO CartItems ( CartId, ProductId, Quantity, Price) VALUES
+( 1, 1, 2, 250000.00),
+( 1, 3, 1, 300000.00);
