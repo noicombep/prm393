@@ -96,13 +96,10 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
-
   // 📊 Get quantity
   int getQuantity(int productId) {
     try {
-      final item = _cart.items.firstWhere(
-        (e) => e.product.id == productId,
-      );
+      final item = _cart.items.firstWhere((e) => e.product.id == productId);
       return item.quantity;
     } catch (e) {
       return 0;
@@ -125,4 +122,3 @@ class CartProvider with ChangeNotifier {
     return _cart.items.fold(0, (sum, item) => sum + item.quantity);
   }
 }
-
