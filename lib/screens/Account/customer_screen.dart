@@ -57,7 +57,6 @@ class _CustomerScreenState extends State<CustomerScreen> {
     );
   }
 
-  // ✏️ EDIT ROLE
   void _showEditDialog(Account user) {
     String role = user.roleId == 1 ? "Admin" : "Customer";
 
