@@ -16,9 +16,14 @@ class _ProductCardState extends State<ProductCard> {
   bool addingToCart = false;
 
   String formatPrice(double price) {
-    return "${price.toStringAsFixed(0)} đ";
+  if (price >= 1000000) {
+    return "${(price / 1000000).toStringAsFixed(1)}M đ"; 
+  } else if (price >= 1000) {
+    return "${(price / 1000).toStringAsFixed(0)}K đ";
   }
-
+  return "${price.toStringAsFixed(0)} đ";
+}
+ 
   void showMessage(String msg, bool isSuccess) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
