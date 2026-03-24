@@ -4,6 +4,7 @@ import '../routes/app_routes.dart';
 import '../services/account_service.dart';
 import 'package:provider/provider.dart';
 import '../providers/theme_provider.dart';
+import 'order_history.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -264,7 +265,18 @@ class _AccountScreenState extends State<AccountScreen> {
                 ),
 
                 const SizedBox(height: 20),
-
+                ListTile(
+  leading: const Icon(Icons.history),
+  title: const Text("Order History"),
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const OrderHistoryScreen(),
+      ),
+    );
+  },
+),
                 ElevatedButton(
                   onPressed: () async {
                     await SessionService.clearToken();

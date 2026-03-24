@@ -18,9 +18,9 @@ class AuthService {
         data: {"email": email, "password": password},
       );
 
+      final role = res.data['role'];
       final token = res.data['token'];
-      await SessionService.saveToken(token);
-
+      await SessionService.saveToken(token, role);
       return true;
     } catch (e) {
       if (e is DioException) {

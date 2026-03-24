@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: const Icon(Icons.admin_panel_settings, color: Colors.pink),
               onPressed: () =>
-                  Navigator.pushNamed(context, AppRoutes.customers),
+                  Navigator.pushNamed(context, AppRoutes.admin),
             ),
         ],
       ),
