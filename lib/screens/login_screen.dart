@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String? emailError;
   String? passwordError;
   String? alertMessage;
-
+  bool showPassword = false;
   bool loading = false;
 
   final auth = AuthService();
@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       if (success) {
-        final token = await SessionService.getToken(); // nếu cần
+        final token = await SessionService.getToken();
         if (mounted) {
           Navigator.pushReplacementNamed(
             context,
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       setState(() {
-        alertMessage = "Error: $e";
+        alertMessage = e.toString();
       });
     } finally {
       setState(() {
@@ -114,11 +114,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Password
                     TextField(
                       controller: passwordController,
-                      obscureText: true,
+                      obscureText: !showPassword,
                       decoration: InputDecoration(
                         labelText: "Password",
                         errorText: passwordError,
                         border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            showPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              showPassword = !showPassword;
+                            });
+                          },
+                        ),
                       ),
                     ),
 

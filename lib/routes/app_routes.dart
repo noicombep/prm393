@@ -10,6 +10,7 @@ import '../screens/checkout_screen.dart';
 import '../screens/account_screen.dart';
 import '../screens/qr_screen.dart';
 import '../screens/blog_screen.dart';
+import '../screens/otp_screen.dart';
 import '../screens/Account/customer_screen.dart';
 
 class AppRoutes {
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String account = "/account";
   static const String sendQr = "/send-qr";
   static const String blog = "/blog";
+  static const String otp = "/otp";
   static const String customers = "/customers";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -64,6 +66,11 @@ class AppRoutes {
       case blog:
         return MaterialPageRoute(builder: (_) => const BlogScreen());
 
+      case otp:
+        return MaterialPageRoute(
+          builder: (_) => const OtpScreen(),
+          settings: settings,
+        );
       case customers:
         return MaterialPageRoute(builder: (_) => const CustomerScreen());
 

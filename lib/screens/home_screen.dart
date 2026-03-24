@@ -202,7 +202,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // How it Works Section
             Container(
               color: Colors.pink.shade50,
               padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
@@ -432,6 +431,8 @@ Widget _blogCard(String title, String imgUrl) {
           child: Text(
             title,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            maxLines: 2, // ← giới hạn 2 dòng
+            overflow: TextOverflow.ellipsis, // ← nếu vượt quá sẽ hiển thị "..."
           ),
         ),
       ],

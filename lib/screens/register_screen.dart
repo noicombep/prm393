@@ -13,11 +13,14 @@ class _SignupScreenState extends State<SignupScreen> {
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
+  final confirmPasswordController = TextEditingController();
   String? usernameError;
   String? emailError;
   String? passwordError;
+  String? confirmPasswordError;
   String? alertMessage;
+  bool showPassword = false;
+  bool showConfirmPassword = false;
 
   bool loading = false;
 
@@ -25,12 +28,29 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void validateForm() {
     setState(() {
-      usernameError =
-          usernameController.text.isEmpty ? "Username is required" : null;
-      emailError =
-          emailController.text.isEmpty ? "Email is required" : null;
-      passwordError =
-          passwordController.text.isEmpty ? "Password is required" : null;
+      usernameError = usernameController.text.isEmpty
+          ? "Username is required"
+          : null;
+      emailError = emailController.text.isEmpty
+          ? "Email is required"
+          : !RegExp(r'^[\w.-]+@[\w.-]+\.\w+$').hasMatch(emailController.text)
+          ? "Email không đúng định dạng"
+          : null;
+      passwordError = passwordController.text.isEmpty
+          ? "Password is required"
+          : passwordController.text.length < 8 ||
+                !passwordController.text.contains(RegExp(r'[A-Z]')) ||
+                !passwordController.text.contains(RegExp(r'[a-z]')) ||
+                !passwordController.text.contains(
+                  RegExp(r'[!@#\$%^&*(),.?":{}|<>]'),
+                )
+          ? "Mật khẩu phải ≥ 8 ký tự, gồm chữ hoa, chữ thường và kí tự đặc biệt"
+          : null;
+      confirmPasswordError = confirmPasswordController.text.isEmpty
+          ? "Confirm Password is required"
+          : passwordController.text != confirmPasswordController.text
+          ? "Confirm Password does not match with Password"
+          : null;
     });
   }
 
@@ -39,7 +59,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
     if (usernameError != null ||
         emailError != null ||
-        passwordError != null) {
+        passwordError != null ||
+        confirmPasswordError != null) {
       return;
     }
 
@@ -49,28 +70,29 @@ class _SignupScreenState extends State<SignupScreen> {
     });
 
     try {
-      final success = await auth.register(
+      await auth.register(
         usernameController.text,
         emailController.text,
         passwordController.text,
       );
 
-      if (success) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Register success")),
-          );
-
-          Navigator.pushReplacementNamed(context, AppRoutes.login);
-        }
-      } else {
-        setState(() {
-          alertMessage = "Register failed";
-        });
+      if (mounted) {
+        print("username: ${usernameController.text}");
+        print("email: ${emailController.text}");
+        // chuyển sang màn hình OTP, truyền thông tin sang
+        Navigator.pushNamed(
+          context,
+          AppRoutes.otp,
+          arguments: {
+            "username": usernameController.text,
+            "email": emailController.text,
+            "password": passwordController.text,
+          },
+        );
       }
     } catch (e) {
       setState(() {
-        alertMessage = "Error: $e";
+        alertMessage = e.toString();
       });
     } finally {
       setState(() {
@@ -84,6 +106,7 @@ class _SignupScreenState extends State<SignupScreen> {
     usernameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -145,23 +168,54 @@ class _SignupScreenState extends State<SignupScreen> {
                     // Password
                     TextField(
                       controller: passwordController,
-                      obscureText: true,
+                      obscureText: !showPassword,
                       decoration: InputDecoration(
                         labelText: "Password",
                         errorText: passwordError,
                         border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            showPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () =>
+                              setState(() => showPassword = !showPassword),
+                        ),
+                      ),
+                    ),
+                    // Confirm Password
+                    const SizedBox(height: 15),
+                    TextField(
+                      controller: confirmPasswordController,
+                      obscureText: !showConfirmPassword,
+                      decoration: InputDecoration(
+                        labelText: "Confirm Password",
+                        errorText: confirmPasswordError,
+                        border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            showConfirmPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () => setState(
+                            () => showConfirmPassword = !showConfirmPassword,
+                          ),
+                        ),
                       ),
                     ),
 
                     const SizedBox(height: 20),
-
                     // Button
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: loading ? null : handleRegister,
                         child: loading
-                            ? const CircularProgressIndicator(color: Colors.white)
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
                             : const Text("Register"),
                       ),
                     ),
@@ -173,7 +227,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         Navigator.pushNamed(context, AppRoutes.login);
                       },
                       child: const Text("Already have account? Login"),
-                    )
+                    ),
                   ],
                 ),
               ),

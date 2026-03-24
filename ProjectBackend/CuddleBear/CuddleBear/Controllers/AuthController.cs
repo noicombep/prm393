@@ -106,13 +106,20 @@ namespace CuddleBear.Controllers
         {
             var user = _context.Users
                 .Include(u => u.Role)
-                .FirstOrDefault(u => u.Email == dto.Email);
-
-            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash) )
+                .FirstOrDefault(u => u.Email == dto.Email.Trim());
+            if (user == null)
+            {
                 return Unauthorized(new
                 {
                     field = "login",
-                    message = "Sai email hoặc mật khẩu"
+                    message = "Email khong ton tai"
+                });
+            }
+            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+                return Unauthorized(new
+                {
+                    field = "login",
+                    message = "Sai mật khẩu"
                 });
 
             if (!user.IsActive)
