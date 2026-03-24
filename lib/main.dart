@@ -7,13 +7,10 @@ import 'providers/theme_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final cartProvider = CartProvider();
-  await cartProvider.loadCart(); 
+  await cartProvider.loadCart();
 
   runApp(
-    ChangeNotifierProvider.value(
-      value: cartProvider,
-      child: const MyApp(),
-    ),
+    ChangeNotifierProvider.value(value: cartProvider, child: const MyApp()),
   );
 }
 
@@ -51,7 +48,6 @@ class MyApp extends StatelessWidget {
             onGenerateRoute: AppRoutes.generateRoute,
           );
         },
-
       ),
     );
   }
