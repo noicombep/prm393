@@ -14,6 +14,8 @@ public partial class BearShopDbContext : DbContext
         : base(options)
     {
     }
+
+    public virtual DbSet<Blog> Blogs { get; set; }
     public DbSet<EmailOtp> EmailOtps { get; set; }
     public virtual DbSet<Review> Reviews { get; set; }
     public virtual DbSet<QRMessage> QRMessages { get; set; }
@@ -255,6 +257,26 @@ public partial class BearShopDbContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Notifications_Users");
+        });
+        modelBuilder.Entity<Blog>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Blogs");
+
+            entity.Property(e => e.Title)
+                .HasMaxLength(200);
+
+            entity.Property(e => e.ImageUrl)
+                .HasMaxLength(255);
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasDefaultValueSql("(getdate())");
+
+            entity.HasOne(d => d.User)
+                .WithMany(p => p.Blogs)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_Blogs_Users");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../services/product_service.dart';
 import '../widgets/product_card.dart';
+import '../services/session_service.dart';
+import '../routes/app_routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,11 +15,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Future<List<Product>> _productsFuture;
-
+  String? role;
   @override
   void initState() {
     super.initState();
     _productsFuture = ProductService().getProducts();
+    loadRole();
+  }
+
+  Future<void> loadRole() async {
+    role = await SessionService.getRole();
+    setState(() {});
   }
 
   @override
@@ -34,6 +42,12 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.shopping_cart, color: Colors.pink),
             onPressed: () => Navigator.pushNamed(context, "/cart"),
           ),
+          if (role == "Admin")
+            IconButton(
+              icon: const Icon(Icons.admin_panel_settings, color: Colors.pink),
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.customers),
+            ),
         ],
       ),
       body: SingleChildScrollView(
@@ -42,12 +56,12 @@ class _HomePageState extends State<HomePage> {
             // Hero Section
             Stack(
               children: [
-                // Image.asset(
-                //   "assets/banner.jpg",
-                //   height: 400,
-                //   width: double.infinity,
-                //   fit: BoxFit.cover,
-                // ),
+                Image.asset(
+                  "assets/banner.jpg",
+                  height: 400,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
                 Container(height: 400, color: Colors.pink.withOpacity(0.4)),
                 Positioned.fill(
                   child: Center(

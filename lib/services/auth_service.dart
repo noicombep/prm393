@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import '../services/session_service.dart';
+import 'dart:io';
+import 'package:dio/io.dart';
 
 class AuthService {
   final Dio _dio = Dio(

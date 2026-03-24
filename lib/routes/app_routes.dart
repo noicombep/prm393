@@ -11,6 +11,7 @@ import '../screens/account_screen.dart';
 import '../screens/qr_screen.dart';
 import '../screens/blog_screen.dart';
 import '../screens/otp_screen.dart';
+import '../screens/Account/customer_screen.dart';
 
 class AppRoutes {
   static const String splash = "/";
@@ -25,6 +26,8 @@ class AppRoutes {
   static const String sendQr = "/send-qr";
   static const String blog = "/blog";
   static const String otp = "/otp";
+  static const String customers = "/customers";
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splash:
@@ -68,6 +71,9 @@ class AppRoutes {
           builder: (_) => const OtpScreen(),
           settings: settings,
         );
+      case customers:
+        return MaterialPageRoute(builder: (_) => const CustomerScreen());
+
       default:
         return MaterialPageRoute(
           builder: (_) =>

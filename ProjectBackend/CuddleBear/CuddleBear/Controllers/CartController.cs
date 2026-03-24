@@ -106,6 +106,8 @@ namespace CuddleBear.Controllers
             Response.Cookies.Delete(GetCartKey());
             return Ok();
         }
+
+
     }
 }
 

@@ -56,6 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
             arguments: token,
           );
         }
+      } else {
+        setState(() {
+          alertMessage = "Login failed or locked account";
+        });
       }
     } catch (e) {
       setState(() {

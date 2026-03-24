@@ -23,7 +23,6 @@ namespace CuddleBear.Controllers
             _config = config;
         }
 
-
         [HttpPost("register")]
         public IActionResult Register(RegisterDto dto)
         {
@@ -43,7 +42,6 @@ namespace CuddleBear.Controllers
                     field = "password",
                     message = "Mật khẩu phải ≥ 8 ký tự, có chữ hoa, chữ thường và ký tự đặc biệt"
                 });
-
             var otp = new Random().Next(100000, 999999).ToString();
 
             var emailOtp = new EmailOtp
@@ -124,6 +122,15 @@ namespace CuddleBear.Controllers
                     message = "Sai mật khẩu"
                 });
 
+            if (!user.IsActive)
+            {
+                return Unauthorized(new
+                {
+                    field = "account",
+                    message = "Tài khoản đã bị khóa"
+                });
+            }
+
             var token = GenerateJwt(user);
 
             return Ok(new
@@ -169,6 +176,160 @@ namespace CuddleBear.Controllers
         public IActionResult AdminOnly()
         {
             return Ok("Chỉ admin");
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("customers")]
+        public async Task<IActionResult> GetCustomers()
+        {
+            var customers = await _context.Users
+                .Where(u => u.RoleId == 2)
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Username,
+                    u.Email,
+                    u.FullName
+                })
+                .ToListAsync();
+
+            return Ok(customers);
+        }
+
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("users/{id}")]
+        public async Task<IActionResult> UpdateUser(int id, UpdateUserDto dto)
+        {
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+                return NotFound("User không tồn tại");
+
+            // Update từng field nếu có
+            if (!string.IsNullOrEmpty(dto.Username))
+                user.Username = dto.Username;
+
+            if (!string.IsNullOrEmpty(dto.Email))
+                user.Email = dto.Email;
+
+            if (!string.IsNullOrEmpty(dto.FullName))
+                user.FullName = dto.FullName;
+
+            if (dto.RoleId.HasValue)
+                user.RoleId = dto.RoleId.Value;
+
+            if (dto.IsActive.HasValue)
+                user.IsActive = dto.IsActive.Value;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Cập nhật thành công" });
+        }
+
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("users/{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+                return NotFound("User không tồn tại");
+
+            // ❗ Soft delete
+            user.IsActive = false;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Đã xóa (soft delete)" });
+        }
+
+
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<IActionResult> GetCurrentUser()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null)
+                return Unauthorized();
+
+            var user = await _context.Users
+                .Include(u => u.Role)
+                .Where(u => u.Id == int.Parse(userId))
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Username,
+                    u.Email,
+                    u.FullName,
+                    u.Phone,
+                    u.Address,
+                    role = u.Role.Name
+                })
+                .FirstOrDefaultAsync();
+
+            return Ok(user);
+        }
+        [Authorize]
+        [HttpPut("me")]
+        public async Task<IActionResult> UpdateProfile(UpdateUserDto dto)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null)
+                return Unauthorized();
+
+            var user = await _context.Users.FindAsync(int.Parse(userId));
+
+            if (user == null)
+                return NotFound();
+
+            if (!string.IsNullOrEmpty(dto.FullName))
+                user.FullName = dto.FullName;
+
+            if (!string.IsNullOrEmpty(dto.Phone))
+                user.Phone = dto.Phone;
+
+            if (!string.IsNullOrEmpty(dto.Address))
+                user.Address = dto.Address;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Cập nhật thành công" });
+        }
+
+
+        [Authorize]
+        [HttpPut("change-password")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDto dto)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null)
+                return Unauthorized();
+
+            var user = await _context.Users.FindAsync(int.Parse(userId));
+
+            if (user == null)
+                return NotFound();
+
+            // ❌ check mật khẩu cũ
+            if (!BCrypt.Net.BCrypt.Verify(dto.OldPassword, user.PasswordHash))
+            {
+                return BadRequest(new
+                {
+                    message = "Mật khẩu cũ không đúng"
+                });
+            }
+            // ✅ validate mật khẩu mới
+            // ✅ update password
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Đổi mật khẩu thành công" });
         }
     }
 
