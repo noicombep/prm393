@@ -12,6 +12,7 @@ import '../screens/qr_screen.dart';
 import '../screens/blog_screen.dart';
 import '../screens/otp_screen.dart';
 import '../screens/Account/customer_screen.dart';
+import '../screens/admin_screen.dart';
 
 class AppRoutes {
   static const String splash = "/";
@@ -27,6 +28,7 @@ class AppRoutes {
   static const String blog = "/blog";
   static const String otp = "/otp";
   static const String customers = "/customers";
+  static const String admin = "/admin";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,7 +46,8 @@ class AppRoutes {
 
       case products:
         return MaterialPageRoute(builder: (_) => const ProductsScreen());
-
+      case admin:
+        return MaterialPageRoute(builder: (_) => const AdminScreen());
       case productDetail:
         final productId = settings.arguments as int;
         return MaterialPageRoute(
